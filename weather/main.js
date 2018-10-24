@@ -94,11 +94,11 @@
     function parseData(data) {
         mainbox.innerHTML = "";
         results.innerHTML = "";
-        var button_new = $.create("button", {
+        const button_new = $.create("button", {
             class: "confirm-btn"
         });
         button_new.textContent = "Try for another Location"
-        button_new.onclick = function () {
+        button_new.onclick = () => {
             createUiForManualEntering()
         }
         if (data.cod === 429) {
