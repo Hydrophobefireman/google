@@ -479,8 +479,9 @@
         const inp = document.getElementById("copyhelp")
         console.log(n);
         inp.value = n;
+        inp.focus()
         inp.select();
-        const a = document.execCommand("copy");
+        const a = document.execCommand("cut");
         x.innerHTML = (!!a ? "Copied!" : "An Error Occured");
     }
 
