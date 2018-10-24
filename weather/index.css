@@ -1,0 +1,120 @@
+
+        .center {
+            margin: auto;
+            text-align: center
+        }
+
+        .permission-box {
+            width: 50%;
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #e3e3e3;
+            box-shadow: 2px 2px 2px 2px #e3e3e3;
+            margin: auto;
+            text-align: center;
+        }
+
+        .input-box {
+            border: 2px solid #e3e3e3;
+            color: #0000008a;
+            width: 100%;
+            outline: none;
+            padding: 3px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .confirm-btn {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 4px;
+            border: 1px solid #6200ee;
+            outline: 0;
+            color: #6200ee;
+            min-width: 80px;
+            margin: 10px;
+            cursor: pointer
+        }
+
+        .confirm-btn:active,
+        .confirm-btn:hover {
+            box-shadow: 2px 2px #d9dce0;
+            background-color: #6200ee;
+            color: #fff
+        }
+
+        .info-q {
+            width: 100%;
+            display: inline-block;
+            user-select: none;
+            margin: auto;
+            -moz-user-select: none;
+            cursor: pointer;
+            text-align: center;
+            padding: 5px;
+            border: 2px solid #e3e3e3;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+            height: 30px;
+        }
+
+        .info-a:hover,
+        .info-a:active,
+        .info-q:hover,
+        .open-data:hover,
+        .open-data:active,
+        .info-q:active {
+            background-color: #d4f1ef
+        }
+
+        .open-data {
+            border: 2px solid #e3e3e3;
+            border-radius: 10px;
+            padding: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            user-select: none;
+            font-weight: bold;
+        }
+
+        .info-box {
+            display: block;
+            margin: auto;
+            border: none;
+            text-align: center;
+            padding: 0px;
+            height: 0;
+            cursor: pointer;
+            user-select: none;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+            border-radius: 10px;
+            font-weight: bold;
+            width: 0;
+        }
+
+        .W-Time {
+            border: 2px solid #e3e3e3;
+            border-radius: 10px;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .info-a {
+            display: inline-block;
+            margin: auto;
+            border: 2px solid #e3e3e3;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+            -moz-user-select: none;
+            transition: 0.3s ease-in-out;
+            border-radius: 10px;
+            width: 100%;
+            height: 30px;
+            font-weight: lighter;
+            font-size: 14px;
+            user-select: none;
+        }
+    
