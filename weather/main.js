@@ -518,9 +518,11 @@
     const loc_hash = location.hash.substr(1);
     if (!!loc_hash) {
         const q = parseqs(loc_hash).data;
-        const r = atob(q);
-        console.log(r);
-        createResults(r)
+        if (!!q) {
+            const r = atob(q);
+            console.log(r);
+            createResults(r)
+        }
     }
     if ("geolocation" in navigator) {
         createUiForPermission()
