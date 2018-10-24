@@ -163,7 +163,7 @@
         const tDiv = $.create("div", {
             class: "W-Time"
         });
-        tDiv.textContent = `Weather Calculated at: ${timeOfCalc}`;
+        tDiv.textContent = `Weather Calculated at: ${timeOfCalc} all times are based on your local time`;
         results.appendChild(tDiv);
 
         //Location-Section
