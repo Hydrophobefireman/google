@@ -36,7 +36,6 @@
             margin: 10px;
             cursor: pointer
         }
-
         .confirm-btn:active,
         .confirm-btn:hover {
             box-shadow: 2px 2px #d9dce0;

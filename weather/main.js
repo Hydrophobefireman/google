@@ -101,6 +101,7 @@
         });
         button_new.textContent = "Try for another Location"
         button_new.onclick = () => {
+            document.body.scroll(0, 0)
             createUiForManualEntering()
         }
         if (data.cod === 429) {
