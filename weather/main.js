@@ -1,5 +1,6 @@
 ((() => {
 
+
     function slidein(el) {
         el.style.overflow = 'hidden'
         el.style.width = '0px';
@@ -84,6 +85,7 @@
 
     async function createResults(q) {
         mainbox.innerHTML = 'Loading';
+        window.location.hash = `data=${btoa(q)}`;
         const urlfetch = __urltemplate__ + q;
         console.log(urlfetch);
         const resp = await fetch(urlfetch);
@@ -94,7 +96,7 @@
     function parseData(data) {
         mainbox.innerHTML = "";
         results.innerHTML = "";
-        const button_new = $.create("button", {
+        const button_new = $.create("div", {
             class: "confirm-btn"
         });
         button_new.textContent = "Try for another Location"
@@ -461,7 +463,25 @@
         _info.textContent = "Note:The API can return inaccurate results if the data provided has errors";
         results.appendChild(_info);
         results.appendChild(button_new);
+        const sharebtn = $.create("div", {
+            class: "confirm-btn"
+        });
 
+        sharebtn.textContent = "Share This Location";
+        sharebtn.setAttribute("data-new", location.hash.substr(1))
+        sharebtn.onclick = function () {
+            share(this, window.location.href)
+        }
+        results.appendChild(sharebtn);
+    }
+
+    function share(x, n) {
+        const inp = document.getElementById("copyhelp")
+        console.log(n);
+        inp.value = n;
+        inp.select();
+        const a = document.execCommand("copy");
+        x.innerHTML = (!!a ? "Copied!" : "An Error Occured");
     }
 
     function successCallback(val) {
@@ -476,11 +496,30 @@
         createResults(_)
     }
 
+    function parseqs(query) {
+        const params = {};
+        query = query[0] == '?' ? query.substring(1) : query;
+        query = decodeURI(query);
+        const vars = query.split('&');
+        for (let i = 0; i < vars.length; i++) {
+            const pair = vars[i].split('=');
+            params[pair[0]] = decodeURIComponent(pair[1]);
+        }
+        return params;
+    };
+
     function errorCallback(e) {
         console.warn(e);
         createUiForManualEntering(true)
     }
     //check if the browser suppports the geolocation api
+    const loc_hash = location.hash.substr(1);
+    if (!!loc_hash) {
+        const q = parseqs(loc_hash).data;
+        const r = atob(q);
+        console.log(r);
+        createResults(r)
+    }
     if ("geolocation" in navigator) {
         createUiForPermission()
     } else {
