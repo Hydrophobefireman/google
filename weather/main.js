@@ -94,6 +94,13 @@
     function parseData(data) {
         mainbox.innerHTML = "";
         results.innerHTML = "";
+        var button_new = $.create("button", {
+            class: "confirm-btn"
+        });
+        button_new.textContent = "Try for another Location"
+        button_new.onclick = function () {
+            createUiForManualEntering()
+        }
         if (data.cod === 429) {
             //handle rate-limit
             return results.textContent = "We have been rate-limited..Please try again after some time";
@@ -453,6 +460,8 @@
 
         _info.textContent = "Note:The API can return inaccurate results if the data provided has errors";
         results.appendChild(_info);
+        results.appendChild(button_new);
+
     }
 
     function successCallback(val) {
