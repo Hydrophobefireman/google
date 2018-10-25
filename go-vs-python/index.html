@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Go Vs Python - A Comparison</title>
+    <meta name="og:title" content="Go Vs Python - A Comparision">
+    <meta name="og:description" content="Comparing Go To Python and its Implementations is one really better than the other?">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .center {
+            margin: auto;
+            text-align: center;
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+
+        .header {
+            font-weight: bold;
+            margin: 20px;
+            padding: 8px;
+            border: 2px solid #e3e3e3;
+            border-radius: 10px;
+        }
+
+        .content {
+            box-shadow: 2px 2px 2px 2px #e3e3e3;
+            border: 1px solid #e3e3e3;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        .header-s {
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .paras {
+            margin: 20px
+        }
+
+        .color-module {
+            padding: 4px;
+            color: #ff0000
+        }
+
+        .answ {
+            text-align: left;
+            margin-left: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div id="root">
+            <div class="header">Comparing Go and Python</div>
+            <div class="content">
+                <div class="header-s">Python is infamous for being slow</div>
+                <div class="paras">
+                    This however is untrue..The CPython implementation of compiling
+                    to bytecode and running against a VM is slow..The PyPy implementation of python is much
+                    faster because Manual memory management
+                    (which is what CPython does with its counting) can be slower than automatic management in some
+                    cases.
+                    This and the Global Interpretor Lock (GIL) make Python threading a difficult task.
+                </div>
+                <div class="paras">Having worked on Python and its <span class="color-module">Threading</span> and
+                    <span class="color-module">Multiprocessing</span> modules..it sure can be a tough task without
+                    having domain specific knowledge.
+                </div>
+                <div class='header-s'>Enter GoLang</div>
+                <div class="paras">A programming language designed by Google. With abilities to handle concurrent
+                    programs (goroutines), make it perfect backend for event-based servers. Go was an attempt to bridge
+                    the gap
+                    between languages like Python and C internally in Google.</div>
+                <div class="header-s">So Which One is Better?</div>
+                <div class="paras">
+                    The answer..depends. Go's typing discipline is strong,static while python is dynamically typed and
+                    uses Duck Typing. "Type Hints" have been around since 3.5 and can be backported (like any PY3
+                    feature) to python2 using the <a href="https://pypi.org/project/typing/">Typing</a> module.
+                    Python is an old language. It came around in the early 90s and emphasised code readability using
+                    whitespaces.
+                    <div class="paras"> Go on the other hand, first appeared 8 years ago.It had the advantage of
+                        experienced Google
+                        programmers who created a language tailored to handling millions of requests at any give time.
+                        Thus, Go had the advantage of threading and asynchronous programming with ease
+                    </div>
+                    <div class="paras">But if Go was really THE better of the two, python would not be the most used
+                        language at Google's <a href="https://github.com/google/">Github Page</a>.
+                        This is because Python has evolved over the years to have multiple purposes..from being the
+                        go-to language in data science to working on nifty scripts and automation..Python is often the
+                        best choice.
+                    </div>
+                </div>
+                <div class="header-s">So when to use What?</div>
+                <div class="paras"><b>Let's Start with Go.</b>
+                    <div class="paras">All is not perfect in the land of Go.Go completely ignores
+                        most recent advances in programming languages in order to seem more similar to C.Go has some
+                        very concrete design problems. Many of these were added on purpose, either to make the language
+                        more like C or to make the implementation simpler</div>
+                    <div class="paras">The way Go handles errors is weird.The
+                        GoGet
+                        method of including dependencies might seem convenient but. what if the maintainers include a
+                        breaking change in their master branch?.Go lacks immutables and beautifully put in one article
+                        <a href="http://www.yinwang.org/blog-cn/2014/04/18/golang">Here</a>, go is
+                        <b>not elegant as Python, not strong as Java.</b>
+                    </div>
+                    <div class="paras"> If you want to read more about the short-comings of Go..check out this repo at
+                        <a href="https://github.com/ksimka/go-is-not-good">Github</a>
+                        Go is a great language for Network Servers,Databases and places where you need multiple threads
+                        and/or are handling thousands of requests at once. Python can be used in multiple places and
+                        can decently handle servers as well. Python has an elegant easy-to-read syntax and is a good
+                        choice for beginners too.Further,python has been a backend for larger websites too! Instagram
+                        still runs on python</div>
+                </div>
+                <div class="header-s">Conclusion</div>
+                <div class="paras" style="text-align:left">In the end, it boils down to preferences and our use case.
+                </div>
+                <div>
+                    <div class="header-s"> Are you a massive website
+                        handling tonnes of requests at once?</div>
+                    <div class="answ"> Go with GoLang</div>
+                    <div class="header-s">Are your working on scripting/automation/data science/smaller websites?</div>
+                    <div class="answ">Enjoy the elegance of Python</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-s">References</div>
+    <ul>
+        <li><a href="https://hackernoon.com/5-reasons-why-we-switched-from-python-to-go-4414d5f42690">https://hackernoon.com/5-reasons-why-we-switched-from-python-to-go-4414d5f42690</a></li>
+        <li><a href="https://www.peterbe.com/plog/govspy">https://www.peterbe.com/plog/govspy</a></li>
+        <li><a href="https://zapier.com/engineering/go-no-go/">https://zapier.com/engineering/go-no-go/</a></li>
+        <li><a href="https://github.com/ksimka/go-is-not-good">https://github.com/ksimka/go-is-not-good</a></li>
+    </ul>
+</body>
+
+</html>
