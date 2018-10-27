@@ -2,7 +2,6 @@ import asyncio
 import os
 
 import requests
-from telegram.ext import MessageHandler
 
 import envs
 
