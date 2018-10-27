@@ -20,11 +20,9 @@ def parse_message(i):
     data = {"chat_id": message_meta["chat"]["id"], "parse_mode": "Markdown"}
     if entities and entities[0].get("type") == "bot_command":
         command = message_meta["text"]
-        text = False
     else:
-        text = message_meta["text"]
         command = False
-    if command and command == "/help":
+    if command and command == "/help" or command == "/start":
         msg = HELP_COMMAND
     elif command and command.strip().startswith("/scrape"):
         try:
